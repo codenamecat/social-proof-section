@@ -1,0 +1,26 @@
+$colors: (
+    very-dark-magenta: #502050,
+    soft-pink: #ee68a4,
+    dark-grayish-magenta: #937b92,
+    light-grayish-magenta: #f7f2f7,
+    white: #ffffff
+);
+
+@function color($color-name) {
+    @return map-get($colors, $color-name)
+}
+
+$desktop: 1500px; //change when relevant
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+body {
+    font-family: 'League Spartan', sans-serif;
+    background-image: url(../images/bg-pattern-top-desktop.svg), url(../images/bg-pattern-bottom-desktop.svg);
+    background-position: left top, right bottom;
+    background-repeat: no-repeat;
+}
