@@ -10,7 +10,7 @@ $colors: (
     @return map-get($colors, $color-name)
 }
 
-$desktop: 1400px;
+$desktop: 1000px;
 
 @mixin desktop {
     @media (min-width: #{$desktop}) {
@@ -27,10 +27,13 @@ body {
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    max-width: 1800px;
 
     @include desktop {
-        // display: grid;
-        // grid-template: 1fr 1fr / 1fr 1fr; COMMIT AND PUSH
+        display: grid;
+        grid-template: 3fr 4fr / 1fr 1fr;
+        row-gap: 5%;
+        padding: 50px;
     }
 }
 
@@ -40,6 +43,14 @@ h1 {
     font-size: 40px;
     width: 80%;
     margin: 50px auto 20px auto;
+
+    @include desktop {
+        text-align: left;
+        margin-left: 10%;
+        margin-top: 5%;
+        width: 50%;
+        font-size: 3rem;
+    }
 }
 
 .introtext {
@@ -47,10 +58,36 @@ h1 {
     width: 87%;
     max-width: 450px;
     margin: 0 auto;
+    line-height: 24px;
+
+    @include desktop {
+        text-align: left;
+        margin-left: 10%;
+        max-width: 400px;
+    }
 }
 
 .star-review-container {
     margin: 10px auto;
+
+    @include desktop {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        margin-top: 5%;
+    }
+}
+
+.star-review-2 {
+    @include desktop {
+        align-self: center; 
+    }
+}
+
+.star-review-3 {
+    @include desktop {
+        align-self: flex-end;
+    }
 }
 
 .star-review {
@@ -59,6 +96,18 @@ h1 {
     padding: 15px 0;
     margin: 15px;
     border-radius: 10px;
+
+    @include desktop {
+        display: flex;
+        width: 450px;
+        margin: 10px 20px;
+    }
+}
+
+.star-rating {
+    @include desktop {
+        padding: 0 30px;
+    }
 }
 
 .star {
@@ -69,6 +118,20 @@ h1 {
     margin: 8px 0 0 0;
     color: color(very-dark-magenta);
     font-weight: 700;
+
+    @include desktop {
+        text-align: left;
+        margin: 4px 0;
+    }
+}
+
+.written-review-container {
+    @include desktop {
+        grid-column: 1 / 3;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
 }
 
 .written-review {
@@ -80,6 +143,23 @@ h1 {
     padding: 30px;
     width: 75%;
     max-width: 450px;
+
+    @include desktop {
+        width: 25%;
+        margin: 30px auto;
+    }
+}
+
+.written-review-1 {
+    @include desktop {
+        align-self: flex-start;
+    }
+}
+
+.written-review-3 {
+    @include desktop {
+        align-self: flex-end;
+    }
 }
 
 .profile-picture {
